@@ -1,0 +1,2044 @@
+{
+  "title": "main",
+  "description": "",
+  "variables": {
+    "oj_table_1065245812_1SelectedId": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "orgListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Org",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallOrgResponse"
+      }
+    },
+    "SDPGetAllCountries": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "v3_1/getAll",
+        "responseType": "getAllCountriesType"
+      }
+    },
+    "SDPGetCountryByName": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "GetCountryByName/getNameName",
+        "responseType": "getCountryByName"
+      }
+    },
+    "varCountryName": {
+      "type": "string"
+    },
+    "vPageEmpDetails": {
+      "type": "getallEmpResponse"
+    },
+    "vPageSearchCriteria": {
+      "type": {
+        "EmployeeID": "string",
+        "Salary": "number",
+        "SalaryRadioValue": "string"
+      }
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getAllCountriesType": {
+      "endpoint": "getAll",
+      "service": "v3_1",
+      "path": "response"
+    },
+    "@decorators.getallEmpResponse": {
+      "endpoint": "getall_Org",
+      "service": "businessObjects",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.getallOrgResponse": {
+      "endpoint": "getall_Org",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getCountryByName": {
+      "endpoint": "getNameName",
+      "service": "GetCountryByName",
+      "path": "response"
+    },
+    "getAllCountriesType": [
+      {
+        "altSpellings": "string[]",
+        "area": "number",
+        "borders": "string[]",
+        "capital": "string[]",
+        "capitalInfo": {
+          "latlng": "number[]"
+        },
+        "car": {
+          "side": "string",
+          "signs": "string[]"
+        },
+        "cca2": "string",
+        "cca3": "string",
+        "ccn3": "string",
+        "cioc": "string",
+        "coatOfArms": {
+          "png": "string",
+          "svg": "string"
+        },
+        "continents": "string[]",
+        "currencies": {
+          "AED": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "AFN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "ALL": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "AMD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "ANG": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "AOA": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "ARS": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "AUD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "AWG": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "AZN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BAM": {
+            "name": "string"
+          },
+          "BBD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BDT": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BGN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BHD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BIF": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BMD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BND": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BOB": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BRL": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BSD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BTN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BWP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BYN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "BZD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "CAD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "CDF": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "CHF": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "CKD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "CLP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "CNY": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "COP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "CRC": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "CUC": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "CUP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "CVE": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "CZK": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "DJF": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "DKK": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "DOP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "DZD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "EGP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "ERN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "ETB": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "EUR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "FJD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "FKP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "FOK": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "GBP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "GEL": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "GGP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "GHS": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "GIP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "GMD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "GNF": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "GTQ": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "GYD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "HKD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "HNL": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "HTG": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "HUF": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "IDR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "ILS": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "IMP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "INR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "IQD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "IRR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "ISK": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "JEP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "JMD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "JOD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "JPY": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "KES": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "KGS": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "KHR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "KID": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "KMF": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "KPW": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "KRW": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "KWD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "KYD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "KZT": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "LAK": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "LBP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "LKR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "LRD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "LSL": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "LYD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MAD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MDL": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MGA": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MKD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MMK": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MNT": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MOP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MRU": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MUR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MVR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MWK": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MXN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MYR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "MZN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "NAD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "NGN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "NIO": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "NOK": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "NPR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "NZD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "OMR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "PAB": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "PEN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "PGK": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "PHP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "PKR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "PLN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "PYG": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "QAR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "RON": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "RSD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "RUB": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "RWF": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SAR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SBD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SCR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SDG": {
+            "name": "string"
+          },
+          "SEK": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SGD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SHP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SLL": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SOS": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SRD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SSP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "STN": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SYP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "SZL": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "THB": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "TJS": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "TMT": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "TND": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "TOP": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "TRY": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "TTD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "TVD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "TWD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "TZS": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "UAH": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "UGX": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "USD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "UYU": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "UZS": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "VES": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "VND": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "VUV": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "WST": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "XAF": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "XCD": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "XOF": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "XPF": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "YER": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "ZAR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "ZMW": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "ZWL": {
+            "name": "string",
+            "symbol": "string"
+          }
+        },
+        "demonyms": {
+          "eng": {
+            "f": "string",
+            "m": "string"
+          },
+          "fra": {
+            "f": "string",
+            "m": "string"
+          }
+        },
+        "fifa": "string",
+        "flag": "string",
+        "flags": {
+          "alt": "string",
+          "png": "string",
+          "svg": "string"
+        },
+        "gini": {
+          "1992": "number",
+          "1998": "number",
+          "1999": "number",
+          "2003": "number",
+          "2004": "number",
+          "2005": "number",
+          "2006": "number",
+          "2008": "number",
+          "2009": "number",
+          "2010": "number",
+          "2011": "number",
+          "2012": "number",
+          "2013": "number",
+          "2014": "number",
+          "2015": "number",
+          "2016": "number",
+          "2017": "number",
+          "2018": "number",
+          "2019": "number"
+        },
+        "idd": {
+          "root": "string",
+          "suffixes": "string[]"
+        },
+        "independent": "boolean",
+        "landlocked": "boolean",
+        "languages": {
+          "afr": "string",
+          "amh": "string",
+          "ara": "string",
+          "arc": "string",
+          "aym": "string",
+          "aze": "string",
+          "bel": "string",
+          "ben": "string",
+          "ber": "string",
+          "bis": "string",
+          "bjz": "string",
+          "bos": "string",
+          "bul": "string",
+          "bwg": "string",
+          "cal": "string",
+          "cat": "string",
+          "ces": "string",
+          "cha": "string",
+          "ckb": "string",
+          "cnr": "string",
+          "crs": "string",
+          "dan": "string",
+          "de": "string",
+          "deu": "string",
+          "div": "string",
+          "dzo": "string",
+          "ell": "string",
+          "eng": "string",
+          "est": "string",
+          "fao": "string",
+          "fas": "string",
+          "fij": "string",
+          "fil": "string",
+          "fin": "string",
+          "fra": "string",
+          "gil": "string",
+          "gle": "string",
+          "glv": "string",
+          "grn": "string",
+          "gsw": "string",
+          "hat": "string",
+          "heb": "string",
+          "her": "string",
+          "hgm": "string",
+          "hif": "string",
+          "hin": "string",
+          "hmo": "string",
+          "hrv": "string",
+          "hun": "string",
+          "hye": "string",
+          "ind": "string",
+          "isl": "string",
+          "ita": "string",
+          "jam": "string",
+          "jpn": "string",
+          "kal": "string",
+          "kat": "string",
+          "kaz": "string",
+          "kck": "string",
+          "khi": "string",
+          "khm": "string",
+          "kin": "string",
+          "kir": "string",
+          "kon": "string",
+          "kor": "string",
+          "kwn": "string",
+          "lao": "string",
+          "lat": "string",
+          "lav": "string",
+          "lin": "string",
+          "lit": "string",
+          "loz": "string",
+          "ltz": "string",
+          "lua": "string",
+          "mah": "string",
+          "mey": "string",
+          "mfe": "string",
+          "mkd": "string",
+          "mlg": "string",
+          "mlt": "string",
+          "mon": "string",
+          "mri": "string",
+          "msa": "string",
+          "mya": "string",
+          "nau": "string",
+          "nbl": "string",
+          "ndc": "string",
+          "nde": "string",
+          "ndo": "string",
+          "nep": "string",
+          "nfr": "string",
+          "niu": "string",
+          "nld": "string",
+          "nno": "string",
+          "nob": "string",
+          "nor": "string",
+          "nrf": "string",
+          "nso": "string",
+          "nya": "string",
+          "nzs": "string",
+          "pap": "string",
+          "pau": "string",
+          "pih": "string",
+          "pol": "string",
+          "por": "string",
+          "pov": "string",
+          "prs": "string",
+          "pus": "string",
+          "que": "string",
+          "rar": "string",
+          "roh": "string",
+          "ron": "string",
+          "run": "string",
+          "rus": "string",
+          "sag": "string",
+          "sin": "string",
+          "slk": "string",
+          "slv": "string",
+          "smi": "string",
+          "smo": "string",
+          "sna": "string",
+          "som": "string",
+          "sot": "string",
+          "spa": "string",
+          "sqi": "string",
+          "srp": "string",
+          "ssw": "string",
+          "swa": "string",
+          "swe": "string",
+          "tam": "string",
+          "tet": "string",
+          "tgk": "string",
+          "tha": "string",
+          "tir": "string",
+          "tkl": "string",
+          "toi": "string",
+          "ton": "string",
+          "tpi": "string",
+          "tsn": "string",
+          "tso": "string",
+          "tuk": "string",
+          "tur": "string",
+          "tvl": "string",
+          "ukr": "string",
+          "urd": "string",
+          "uzb": "string",
+          "ven": "string",
+          "vie": "string",
+          "xho": "string",
+          "zdj": "string",
+          "zho": "string",
+          "zib": "string",
+          "zul": "string"
+        },
+        "latlng": "number[]",
+        "maps": {
+          "googleMaps": "string",
+          "openStreetMaps": "string"
+        },
+        "name": {
+          "common": "string",
+          "nativeName": {
+            "afr": {
+              "common": "string",
+              "official": "string"
+            },
+            "amh": {
+              "common": "string",
+              "official": "string"
+            },
+            "ara": {
+              "common": "string",
+              "official": "string"
+            },
+            "arc": {
+              "common": "string",
+              "official": "string"
+            },
+            "aym": {
+              "common": "string",
+              "official": "string"
+            },
+            "aze": {
+              "common": "string",
+              "official": "string"
+            },
+            "bar": {
+              "common": "string",
+              "official": "string"
+            },
+            "bel": {
+              "common": "string",
+              "official": "string"
+            },
+            "ben": {
+              "common": "string",
+              "official": "string"
+            },
+            "ber": {
+              "common": "string",
+              "official": "string"
+            },
+            "bis": {
+              "common": "string",
+              "official": "string"
+            },
+            "bjz": {
+              "common": "string",
+              "official": "string"
+            },
+            "bos": {
+              "common": "string",
+              "official": "string"
+            },
+            "bul": {
+              "common": "string",
+              "official": "string"
+            },
+            "bwg": {
+              "common": "string",
+              "official": "string"
+            },
+            "cal": {
+              "common": "string",
+              "official": "string"
+            },
+            "cat": {
+              "common": "string",
+              "official": "string"
+            },
+            "ces": {
+              "common": "string",
+              "official": "string"
+            },
+            "cha": {
+              "common": "string",
+              "official": "string"
+            },
+            "ckb": {
+              "common": "string",
+              "official": "string"
+            },
+            "cnr": {
+              "common": "string",
+              "official": "string"
+            },
+            "crs": {
+              "common": "string",
+              "official": "string"
+            },
+            "dan": {
+              "common": "string",
+              "official": "string"
+            },
+            "deu": {
+              "common": "string",
+              "official": "string"
+            },
+            "div": {
+              "common": "string",
+              "official": "string"
+            },
+            "dzo": {
+              "common": "string",
+              "official": "string"
+            },
+            "ell": {
+              "common": "string",
+              "official": "string"
+            },
+            "eng": {
+              "common": "string",
+              "official": "string"
+            },
+            "est": {
+              "common": "string",
+              "official": "string"
+            },
+            "fao": {
+              "common": "string",
+              "official": "string"
+            },
+            "fas": {
+              "common": "string",
+              "official": "string"
+            },
+            "fij": {
+              "common": "string",
+              "official": "string"
+            },
+            "fil": {
+              "common": "string",
+              "official": "string"
+            },
+            "fin": {
+              "common": "string",
+              "official": "string"
+            },
+            "fra": {
+              "common": "string",
+              "official": "string"
+            },
+            "gil": {
+              "common": "string",
+              "official": "string"
+            },
+            "gle": {
+              "common": "string",
+              "official": "string"
+            },
+            "glv": {
+              "common": "string",
+              "official": "string"
+            },
+            "grn": {
+              "common": "string",
+              "official": "string"
+            },
+            "gsw": {
+              "common": "string",
+              "official": "string"
+            },
+            "hat": {
+              "common": "string",
+              "official": "string"
+            },
+            "heb": {
+              "common": "string",
+              "official": "string"
+            },
+            "her": {
+              "common": "string",
+              "official": "string"
+            },
+            "hgm": {
+              "common": "string",
+              "official": "string"
+            },
+            "hif": {
+              "common": "string",
+              "official": "string"
+            },
+            "hin": {
+              "common": "string",
+              "official": "string"
+            },
+            "hmo": {
+              "common": "string",
+              "official": "string"
+            },
+            "hrv": {
+              "common": "string",
+              "official": "string"
+            },
+            "hun": {
+              "common": "string",
+              "official": "string"
+            },
+            "hye": {
+              "common": "string",
+              "official": "string"
+            },
+            "ind": {
+              "common": "string",
+              "official": "string"
+            },
+            "isl": {
+              "common": "string",
+              "official": "string"
+            },
+            "ita": {
+              "common": "string",
+              "official": "string"
+            },
+            "jam": {
+              "common": "string",
+              "official": "string"
+            },
+            "jpn": {
+              "common": "string",
+              "official": "string"
+            },
+            "kal": {
+              "common": "string",
+              "official": "string"
+            },
+            "kat": {
+              "common": "string",
+              "official": "string"
+            },
+            "kaz": {
+              "common": "string",
+              "official": "string"
+            },
+            "kck": {
+              "common": "string",
+              "official": "string"
+            },
+            "khi": {
+              "common": "string",
+              "official": "string"
+            },
+            "khm": {
+              "common": "string",
+              "official": "string"
+            },
+            "kin": {
+              "common": "string",
+              "official": "string"
+            },
+            "kir": {
+              "common": "string",
+              "official": "string"
+            },
+            "kon": {
+              "common": "string",
+              "official": "string"
+            },
+            "kor": {
+              "common": "string",
+              "official": "string"
+            },
+            "kwn": {
+              "common": "string",
+              "official": "string"
+            },
+            "lao": {
+              "common": "string",
+              "official": "string"
+            },
+            "lat": {
+              "common": "string",
+              "official": "string"
+            },
+            "lav": {
+              "common": "string",
+              "official": "string"
+            },
+            "lin": {
+              "common": "string",
+              "official": "string"
+            },
+            "lit": {
+              "common": "string",
+              "official": "string"
+            },
+            "loz": {
+              "common": "string",
+              "official": "string"
+            },
+            "ltz": {
+              "common": "string",
+              "official": "string"
+            },
+            "lua": {
+              "common": "string",
+              "official": "string"
+            },
+            "mah": {
+              "common": "string",
+              "official": "string"
+            },
+            "mey": {
+              "common": "string",
+              "official": "string"
+            },
+            "mfe": {
+              "common": "string",
+              "official": "string"
+            },
+            "mkd": {
+              "common": "string",
+              "official": "string"
+            },
+            "mlg": {
+              "common": "string",
+              "official": "string"
+            },
+            "mlt": {
+              "common": "string",
+              "official": "string"
+            },
+            "mon": {
+              "common": "string",
+              "official": "string"
+            },
+            "mri": {
+              "common": "string",
+              "official": "string"
+            },
+            "msa": {
+              "common": "string",
+              "official": "string"
+            },
+            "mya": {
+              "common": "string",
+              "official": "string"
+            },
+            "nau": {
+              "common": "string",
+              "official": "string"
+            },
+            "nbl": {
+              "common": "string",
+              "official": "string"
+            },
+            "ndc": {
+              "common": "string",
+              "official": "string"
+            },
+            "nde": {
+              "common": "string",
+              "official": "string"
+            },
+            "ndo": {
+              "common": "string",
+              "official": "string"
+            },
+            "nep": {
+              "common": "string",
+              "official": "string"
+            },
+            "nfr": {
+              "common": "string",
+              "official": "string"
+            },
+            "niu": {
+              "common": "string",
+              "official": "string"
+            },
+            "nld": {
+              "common": "string",
+              "official": "string"
+            },
+            "nno": {
+              "common": "string",
+              "official": "string"
+            },
+            "nob": {
+              "common": "string",
+              "official": "string"
+            },
+            "nor": {
+              "common": "string",
+              "official": "string"
+            },
+            "nrf": {
+              "common": "string",
+              "official": "string"
+            },
+            "nso": {
+              "common": "string",
+              "official": "string"
+            },
+            "nya": {
+              "common": "string",
+              "official": "string"
+            },
+            "nzs": {
+              "common": "string",
+              "official": "string"
+            },
+            "pap": {
+              "common": "string",
+              "official": "string"
+            },
+            "pau": {
+              "common": "string",
+              "official": "string"
+            },
+            "pih": {
+              "common": "string",
+              "official": "string"
+            },
+            "pol": {
+              "common": "string",
+              "official": "string"
+            },
+            "por": {
+              "common": "string",
+              "official": "string"
+            },
+            "pov": {
+              "common": "string",
+              "official": "string"
+            },
+            "prs": {
+              "common": "string",
+              "official": "string"
+            },
+            "pus": {
+              "common": "string",
+              "official": "string"
+            },
+            "que": {
+              "common": "string",
+              "official": "string"
+            },
+            "rar": {
+              "common": "string",
+              "official": "string"
+            },
+            "roh": {
+              "common": "string",
+              "official": "string"
+            },
+            "ron": {
+              "common": "string",
+              "official": "string"
+            },
+            "run": {
+              "common": "string",
+              "official": "string"
+            },
+            "rus": {
+              "common": "string",
+              "official": "string"
+            },
+            "sag": {
+              "common": "string",
+              "official": "string"
+            },
+            "sin": {
+              "common": "string",
+              "official": "string"
+            },
+            "slk": {
+              "common": "string",
+              "official": "string"
+            },
+            "slv": {
+              "common": "string",
+              "official": "string"
+            },
+            "smi": {
+              "common": "string",
+              "official": "string"
+            },
+            "smo": {
+              "common": "string",
+              "official": "string"
+            },
+            "sna": {
+              "common": "string",
+              "official": "string"
+            },
+            "som": {
+              "common": "string",
+              "official": "string"
+            },
+            "sot": {
+              "common": "string",
+              "official": "string"
+            },
+            "spa": {
+              "common": "string",
+              "official": "string"
+            },
+            "sqi": {
+              "common": "string",
+              "official": "string"
+            },
+            "srp": {
+              "common": "string",
+              "official": "string"
+            },
+            "ssw": {
+              "common": "string",
+              "official": "string"
+            },
+            "swa": {
+              "common": "string",
+              "official": "string"
+            },
+            "swe": {
+              "common": "string",
+              "official": "string"
+            },
+            "tam": {
+              "common": "string",
+              "official": "string"
+            },
+            "tet": {
+              "common": "string",
+              "official": "string"
+            },
+            "tgk": {
+              "common": "string",
+              "official": "string"
+            },
+            "tha": {
+              "common": "string",
+              "official": "string"
+            },
+            "tir": {
+              "common": "string",
+              "official": "string"
+            },
+            "tkl": {
+              "common": "string",
+              "official": "string"
+            },
+            "toi": {
+              "common": "string",
+              "official": "string"
+            },
+            "ton": {
+              "common": "string",
+              "official": "string"
+            },
+            "tpi": {
+              "common": "string",
+              "official": "string"
+            },
+            "tsn": {
+              "common": "string",
+              "official": "string"
+            },
+            "tso": {
+              "common": "string",
+              "official": "string"
+            },
+            "tuk": {
+              "common": "string",
+              "official": "string"
+            },
+            "tur": {
+              "common": "string",
+              "official": "string"
+            },
+            "tvl": {
+              "common": "string",
+              "official": "string"
+            },
+            "ukr": {
+              "common": "string",
+              "official": "string"
+            },
+            "urd": {
+              "common": "string",
+              "official": "string"
+            },
+            "uzb": {
+              "common": "string",
+              "official": "string"
+            },
+            "ven": {
+              "common": "string",
+              "official": "string"
+            },
+            "vie": {
+              "common": "string",
+              "official": "string"
+            },
+            "xho": {
+              "common": "string",
+              "official": "string"
+            },
+            "zdj": {
+              "common": "string",
+              "official": "string"
+            },
+            "zho": {
+              "common": "string",
+              "official": "string"
+            },
+            "zib": {
+              "common": "string",
+              "official": "string"
+            },
+            "zul": {
+              "common": "string",
+              "official": "string"
+            }
+          },
+          "official": "string"
+        },
+        "population": "number",
+        "postalCode": {
+          "format": "string",
+          "regex": "string"
+        },
+        "region": "string",
+        "startOfWeek": "string",
+        "status": "string",
+        "subregion": "string",
+        "timezones": "string[]",
+        "tld": "string[]",
+        "translations": {
+          "ara": {
+            "common": "string",
+            "official": "string"
+          },
+          "bre": {
+            "common": "string",
+            "official": "string"
+          },
+          "ces": {
+            "common": "string",
+            "official": "string"
+          },
+          "cym": {
+            "common": "string",
+            "official": "string"
+          },
+          "deu": {
+            "common": "string",
+            "official": "string"
+          },
+          "est": {
+            "common": "string",
+            "official": "string"
+          },
+          "fin": {
+            "common": "string",
+            "official": "string"
+          },
+          "fra": {
+            "common": "string",
+            "official": "string"
+          },
+          "hrv": {
+            "common": "string",
+            "official": "string"
+          },
+          "hun": {
+            "common": "string",
+            "official": "string"
+          },
+          "ita": {
+            "common": "string",
+            "official": "string"
+          },
+          "jpn": {
+            "common": "string",
+            "official": "string"
+          },
+          "kor": {
+            "common": "string",
+            "official": "string"
+          },
+          "nld": {
+            "common": "string",
+            "official": "string"
+          },
+          "per": {
+            "common": "string",
+            "official": "string"
+          },
+          "pol": {
+            "common": "string",
+            "official": "string"
+          },
+          "por": {
+            "common": "string",
+            "official": "string"
+          },
+          "rus": {
+            "common": "string",
+            "official": "string"
+          },
+          "slk": {
+            "common": "string",
+            "official": "string"
+          },
+          "spa": {
+            "common": "string",
+            "official": "string"
+          },
+          "srp": {
+            "common": "string",
+            "official": "string"
+          },
+          "swe": {
+            "common": "string",
+            "official": "string"
+          },
+          "tur": {
+            "common": "string",
+            "official": "string"
+          },
+          "urd": {
+            "common": "string",
+            "official": "string"
+          },
+          "zho": {
+            "common": "string",
+            "official": "string"
+          }
+        },
+        "unMember": "boolean"
+      }
+    ],
+    "getallEmpResponse": {
+      "createdBy": "string",
+      "creationDate": "string",
+      "department": "number",
+      "email": "string",
+      "firstName": "string",
+      "id": "number",
+      "lastName": "string",
+      "lastUpdateDate": "string",
+      "lastUpdatedBy": "string",
+      "managerId": "number",
+      "phoneNumber": "number",
+      "salary": "number"
+    },
+    "getallOrgResponse": {
+      "items": [
+        {
+          "department": "number",
+          "email": "string",
+          "firstName": "string",
+          "id": "number",
+          "lastName": "string",
+          "lastUpdateDate": "string",
+          "lastUpdatedBy": "string",
+          "phoneNumber": "number",
+          "salary": "number"
+        }
+      ]
+    },
+    "getCountryByName": [
+      {
+        "altSpellings": "string[]",
+        "area": "number",
+        "borders": "string[]",
+        "capital": "string[]",
+        "capitalInfo": {
+          "latlng": "number[]"
+        },
+        "car": {
+          "side": "string",
+          "signs": "string[]"
+        },
+        "cca2": "string",
+        "cca3": "string",
+        "ccn3": "string",
+        "cioc": "string",
+        "coatOfArms": {
+          "png": "string",
+          "svg": "string"
+        },
+        "continents": "string[]",
+        "currencies": {
+          "INR": {
+            "name": "string",
+            "symbol": "string"
+          },
+          "USD": {
+            "name": "string",
+            "symbol": "string"
+          }
+        },
+        "demonyms": {
+          "eng": {
+            "f": "string",
+            "m": "string"
+          },
+          "fra": {
+            "f": "string",
+            "m": "string"
+          }
+        },
+        "fifa": "string",
+        "flag": "string",
+        "flags": {
+          "alt": "string",
+          "png": "string",
+          "svg": "string"
+        },
+        "gini": {
+          "2011": "number"
+        },
+        "idd": {
+          "root": "string",
+          "suffixes": "string[]"
+        },
+        "independent": "boolean",
+        "landlocked": "boolean",
+        "languages": {
+          "eng": "string",
+          "hin": "string",
+          "tam": "string"
+        },
+        "latlng": "number[]",
+        "maps": {
+          "googleMaps": "string",
+          "openStreetMaps": "string"
+        },
+        "name": {
+          "common": "string",
+          "nativeName": {
+            "eng": {
+              "common": "string",
+              "official": "string"
+            },
+            "hin": {
+              "common": "string",
+              "official": "string"
+            },
+            "tam": {
+              "common": "string",
+              "official": "string"
+            }
+          },
+          "official": "string"
+        },
+        "population": "number",
+        "postalCode": {
+          "format": "string",
+          "regex": "string"
+        },
+        "region": "string",
+        "startOfWeek": "string",
+        "status": "string",
+        "subregion": "string",
+        "timezones": "string[]",
+        "tld": "string[]",
+        "translations": {
+          "ara": {
+            "common": "string",
+            "official": "string"
+          },
+          "bre": {
+            "common": "string",
+            "official": "string"
+          },
+          "ces": {
+            "common": "string",
+            "official": "string"
+          },
+          "cym": {
+            "common": "string",
+            "official": "string"
+          },
+          "deu": {
+            "common": "string",
+            "official": "string"
+          },
+          "est": {
+            "common": "string",
+            "official": "string"
+          },
+          "fin": {
+            "common": "string",
+            "official": "string"
+          },
+          "fra": {
+            "common": "string",
+            "official": "string"
+          },
+          "hrv": {
+            "common": "string",
+            "official": "string"
+          },
+          "hun": {
+            "common": "string",
+            "official": "string"
+          },
+          "ita": {
+            "common": "string",
+            "official": "string"
+          },
+          "jpn": {
+            "common": "string",
+            "official": "string"
+          },
+          "kor": {
+            "common": "string",
+            "official": "string"
+          },
+          "nld": {
+            "common": "string",
+            "official": "string"
+          },
+          "per": {
+            "common": "string",
+            "official": "string"
+          },
+          "pol": {
+            "common": "string",
+            "official": "string"
+          },
+          "por": {
+            "common": "string",
+            "official": "string"
+          },
+          "rus": {
+            "common": "string",
+            "official": "string"
+          },
+          "slk": {
+            "common": "string",
+            "official": "string"
+          },
+          "spa": {
+            "common": "string",
+            "official": "string"
+          },
+          "srp": {
+            "common": "string",
+            "official": "string"
+          },
+          "swe": {
+            "common": "string",
+            "official": "string"
+          },
+          "tur": {
+            "common": "string",
+            "official": "string"
+          },
+          "urd": {
+            "common": "string",
+            "official": "string"
+          },
+          "zho": {
+            "common": "string",
+            "official": "string"
+          }
+        },
+        "unMember": "boolean"
+      }
+    ]
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chainId": "ButtonActionChainSearchEmployee"
+        },
+        {
+          "chainId": "ButtonActionChainSearchEmployee"
+        },
+        {
+          "chainId": "ButtonActionChainSearchEmp"
+        }
+      ]
+    },
+    "createOrgButtonClicked": {
+      "chains": [
+        {
+          "chainId": "navigateToCreateOrgChain2"
+        }
+      ]
+    },
+    "deleteOrgButtonClicked": {
+      "chains": [
+        {
+          "chainId": "deleteOrgChain",
+          "parameters": {
+            "orgId": "[[ $variables.oj_table_1065245812_1SelectedId ]]"
+          }
+        }
+      ]
+    },
+    "editOrgButtonClicked": {
+      "chains": [
+        {
+          "chainId": "navigateToEditOrgChain2",
+          "parameters": {
+            "orgId": "[[ $variables.oj_table_1065245812_1SelectedId ]]"
+          }
+        }
+      ]
+    },
+    "hyperlinkClick": {
+      "chains": [
+{
+          "chainId": "HyperlinkClickChainEmpDetails",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        },
+        {
+          "chainId": "HyperlinkClickChain1",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "hyperlinkClick2": {
+      "chains": [
+        {
+          "chainId": "HyperlinkClickChain",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "oj_table_1065245812_1SelectionChanged": {
+      "chains": [
+        {
+          "chainId": "oj_table_1065245812_1ChangeSelectionChain",
+          "parameters": {
+            "orgId": "[[ $event.detail.value.key || '' ]]"
+          }
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-collapsible": {
+        "path": "ojs/ojcollapsible"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-label-value": {
+        "path": "ojs/ojlabelvalue"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-progress-bar": {
+        "path": "ojs/ojprogress-bar"
+      },
+      "oj-radioset": {
+        "path": "ojs/ojradioset"
+      },
+      "oj-sample-export-data": {
+        "path": "oj-sample/export-data/loader"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      }
+    }
+  }
+}

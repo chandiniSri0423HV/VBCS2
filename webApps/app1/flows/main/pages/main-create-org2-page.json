@@ -1,0 +1,105 @@
+{
+  "title": "Create Org",
+  "description": "Creates new Org",
+  "variables": {
+    "createOrgChainInProgress": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "org": {
+      "type": "page:createOrgRequest",
+      "defaultValue": {
+        "depRelationObject": [
+          {}
+        ]
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.createOrgRequest": {
+      "endpoint": "create_Org",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "businessObjectsServiceErrorResponseType": {
+      "body": {
+        "status": "string",
+        "title": "string",
+        "o:errorDetails": [
+          {
+            "detail": "string",
+            "o:errorCode": "string"
+          }
+        ]
+      },
+      "status": "number"
+    },
+    "createOrgRequest": {
+      "department": "number",
+      "depRelationObject": [
+        {
+          "location": "number"
+        }
+      ],
+      "email": "string",
+      "firstName": "string",
+      "id": "number",
+      "lastName": "string",
+      "managerId": "number",
+      "phoneNumber": "number",
+      "salary": "number"
+    }
+  },
+  "eventListeners": {
+    "backButtonClicked": {
+      "chains": [
+        {
+          "chainId": "goBackChain"
+        }
+      ]
+    },
+    "saveButtonClicked": {
+      "chains": [
+        {
+          "chainId": "createOrgChain"
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+    },
+    "modules": {
+      "ojValidationBase": {
+        "path": "ojs/ojvalidation-base"
+      }
+    }
+  }
+}

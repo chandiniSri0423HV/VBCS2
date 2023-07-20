@@ -1,0 +1,11 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,firstName,lastName,phoneNumber,email,department,depRelation,salary,managerId
+1021,2023-07-20T15:16:55.816,2023-07-20T15:16:55.816,devops_user,devops_user,Chandini,Sri,9.087654321E9,chanidni@gmail.com,10.0,,20000.0,101.0
+1022,2023-07-20T15:16:55.816,2023-07-20T15:16:55.816,devops_user,devops_user,ABC,DEF,8.978870199E9,chanidni2gmail.com,30.0,,14000.0,109.0
+1023,2023-07-20T15:16:55.816,2023-07-20T15:16:55.816,devops_user,devops_user,FGH,FGH,7.7769301E9,FGH@hmail.com,20.0,,25000.0,103.0
+1024,2023-07-20T15:16:55.816,2023-07-20T15:16:55.816,devops_user,devops_user,FGHersdf,FGdfH,7.7370981E9,FGH@hmail.com,20.0,,23000.0,103.0
+1025,2023-07-20T15:16:55.816,2023-07-20T15:16:55.816,devops_user,devops_user,FGHskjd,FGHkuhl,8.68751953E9,FGH@hmail.com,20.0,,26000.0,103.0
+1028,2023-07-20T15:16:55.817,2023-07-20T15:16:55.817,devops_user,devops_user,opq,pqr,8.796002563E9,prropq@gmail.com,10.0,,20400.0,101.0
+1029,2023-07-20T15:16:55.816,2023-07-20T15:16:55.816,devops_user,devops_user,AGF,AGHF,9.983289607E9,FGH@hmail.com,20.0,,18000.0,103.0
+10200,2023-07-20T15:16:55.817,2023-07-20T15:16:55.817,devops_user,devops_user,Lisa,Jones,2.389077687E9,lisajones@gmail.com,5.0,,23000.0,111.0
+10210,2023-07-20T15:16:55.817,2023-07-20T15:16:55.817,devops_user,devops_user,abc,xyz,9.087654321E9,abcxyz@gmail.com,10.0,,20000.0,101.0
+10212,2023-07-20T15:16:55.817,2023-07-20T15:16:55.817,devops_user,devops_user,alan,hooper,6.597684654E9,alanhooper@gmail.com,5.0,,19300.0,111.0

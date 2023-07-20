@@ -1,0 +1,36 @@
+{
+  "root": "loadOrg",
+  "actions": {
+    "loadOrg": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "businessObjects/get_Org",
+        "uriParams": {
+          "Org_Id": "[[ $page.variables.orgId ]]"
+        },
+        "responseType": "page:getOrgResponse"
+      },
+      "outcomes": {
+        "success": "assignPayload",
+        "failure": "fireErrorNotification"
+      }
+    },
+    "assignPayload": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.org": {
+          "source": "[[ $chain.results.loadOrg.body ]]"
+        }
+      }
+    },
+    "fireErrorNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "summary": "Could not load data",
+        "message": "[[ 'Could not load data: status ' + $chain.results.loadOrg.status ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    }
+  }
+}

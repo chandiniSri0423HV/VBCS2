@@ -1,0 +1,91 @@
+{
+  "title": "Employee Details",
+  "description": "Displays Org record",
+  "variables": {
+    "org": {
+      "type": "page:getOrgResponse"
+    },
+    "orgId": {
+      "type": "string",
+      "required": true,
+      "input": "fromUrl"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getOrgResponse": {
+      "endpoint": "get_Org",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "getOrgResponse": {
+      "department": "number",
+      "depRelation": "number",
+      "depRelationObject": {
+        "items": [
+          {
+            "location": "number",
+            "locationRelation": "number"
+          }
+        ]
+      },
+      "email": "string",
+      "firstName": "string",
+      "id": "number",
+      "lastName": "string",
+      "managerId": "number",
+      "phoneNumber": "number",
+      "salary": "number"
+    }
+  },
+  "eventListeners": {
+    "backButtonClicked": {
+      "chains": [
+        {
+          "chainId": "goBackChain"
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chainId": "loadOrgChain"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      }
+    },
+    "modules": {
+      "ojValidationBase": {
+        "path": "ojs/ojvalidation-base"
+      }
+    }
+  }
+}

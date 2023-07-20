@@ -1,0 +1,111 @@
+{
+  "description": "",
+  "root": "resetVariablesSDPGetCountryByName",
+  "actions": {
+    "assignVariablesOrgListSDP": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.orgListSDP": {
+          "source": "$variables.current.row.name.common",
+          "auto": "always"
+        }
+      },
+      "outcomes": {
+        "success": "callRestGetNameName"
+      }
+    },
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestGetNameName.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "callRestGetNameName": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "GetCountryByName/getNameName",
+        "uriParams": {
+          "name": "{{ $page.variables.varCountryName }}"
+        }
+      },
+      "outcomes": {
+        "failure": "fireNotification",
+        "success": "fireNotificationCurrent"
+      }
+    },
+    "assignVariablesSDPGetCountryByName": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.SDPGetCountryByName": {
+          "source": {
+            "transforms": {
+              "response": "{{ $chain.results.callRestGetNameName }}"
+            }
+          },
+          "reset": "none",
+          "auto": "always",
+          "mapping": {
+            "$target.transforms": {
+              "source": "$source.transforms",
+              "reset": "none",
+              "auto": "always"
+            }
+          }
+        }
+      },
+      "outcomes": {
+        "success": "fireDataProviderEventSDPGetCountryByName"
+      }
+    },
+    "fireDataProviderEventSDPGetCountryByName": {
+      "module": "vb/action/builtin/fireDataProviderEventAction",
+      "parameters": {
+        "target": "[[ $page.variables.SDPGetCountryByName ]]",
+        "refresh": null
+      }
+    },
+    "resetVariablesSDPGetCountryByName": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.SDPGetCountryByName",
+          "$page.variables.varCountryName"
+        ]
+      },
+      "outcomes": {
+        "success": "assignVariablesOrgListSDP"
+      }
+    },
+    "fireNotificationCurrent": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "type": "confirmation",
+        "summary": "[[ $variables.current ]]"
+      },
+      "outcomes": {
+        "success": "assignVariablesSDPGetCountryByName"
+      }
+    }
+  },
+  "variables": {
+    "key": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    },
+    "index": {
+      "required": true,
+      "type": "number",
+      "input": "fromCaller"
+    },
+    "current": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

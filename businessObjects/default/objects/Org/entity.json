@@ -1,0 +1,119 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "cc1c13db-0b3e-4a61-aed4-0fedb2352e55",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "854f237b-61a4-401e-bab8-dd78fb688c1b",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "379144ff-7e88-45db-915f-37edcec14ed1",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "8d547e7b-9d42-42e5-814e-eedefc76d945",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "7c1645a5-740f-415a-9b40-1df22a899b3d",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+{
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "6a9427fa-f28c-48be-b0c7-f2bc9e4559cd",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "firstName",
+            "oid": "b20d6713-a1a7-4ebf-b417-c17630bc9ad1",
+            "displayLabel": "first_name"
+        }        ,
+        {
+            "type": "string",
+            "name": "lastName",
+            "oid": "5bdc2846-b054-4a29-8d0d-93e8a2cc1690",
+            "displayLabel": "last_name"
+        }        ,
+        {
+            "type": "number",
+            "name": "phoneNumber",
+            "oid": "fc8ae7ef-aee7-45c9-9db2-4828fb0de51c",
+            "displayLabel": "phone_number",
+            "format": "phone"
+        }        ,
+        {
+            "type": "string",
+            "name": "email",
+            "oid": "0349c1a7-bdc9-4944-ba32-34be15f25df1",
+            "displayLabel": "email",
+            "format": "email"
+        }        ,
+        {
+            "type": "number",
+            "name": "department",
+            "oid": "03364122-21a6-4a48-9424-ef60bf563748",
+            "displayLabel": "department"
+        }        ,
+        {
+            "type": "number",
+            "name": "depRelation",
+            "oid": "8bca91b1-40dd-4ea4-a9d6-5e01bcf9a77b",
+            "required": false,
+            "displayLabel": "DepRelation"
+        }        ,
+        {
+            "type": "number",
+            "name": "salary",
+            "oid": "00ade706-5639-4897-8657-fa72565e2dce",
+            "displayLabel": "Salary"
+        }        ,
+        {
+            "type": "number",
+            "name": "managerId",
+            "oid": "2f023b16-6815-4f62-8b2f-96f25bcc4ebe",
+            "displayLabel": "manager_id"
+        }
+    ],
+    "name": "Org",
+    "oid": "fc891b39-f635-4513-b61e-13513335cad8",
+    "displayLabel": "Org",
+    "relationships": [
+        {
+            "name": "depRelationObject",
+            "reverseRelationship": "orgCollection",
+            "targetEntity": "Dep",
+            "type": "outgoing",
+            "exposeAccessor": true,
+            "mappingField": "depRelation",
+            "deleteRule": "restrict"
+        }
+    ]
+}

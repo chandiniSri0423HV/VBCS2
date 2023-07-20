@@ -1,0 +1,83 @@
+{
+  "description": "",
+  "root": "callComponentOjDialogSearchingProgressOpen",
+  "actions": {
+    "assignVariablesOrgListSDP": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.orgListSDP": {
+          "source": {
+            "uriParameters": {
+              "q": "{{ $chain.results.callFunctionGetSearchQueryPrameter }}"
+            }
+          },
+          "reset": "none",
+          "auto": "always",
+          "mapping": {
+            "$target.uriParameters": {
+              "source": "$source.uriParameters",
+              "reset": "none",
+              "auto": "always"
+            }
+          }
+        }
+      },
+      "outcomes": {
+        "success": "fireDataProviderEventOrgListSDP"
+      }
+    },
+    "fireDataProviderEventOrgListSDP": {
+      "module": "vb/action/builtin/fireDataProviderEventAction",
+      "parameters": {
+        "refresh": null,
+        "target": "[[ $page.variables.orgListSDP ]]"
+      },
+      "outcomes": {
+        "success": "resetVariablesVPageSearchCriteria"
+      }
+    },
+    "callFunctionGetSearchQueryPrameter": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "[[ $functions ]]",
+        "functionName": "getSearchQueryPrameter",
+        "params": [
+          "{{ $page.variables.vPageSearchCriteria.EmployeeID }}",
+          "{{ $page.variables.vPageSearchCriteria.Salary }}"
+        ]
+      },
+      "outcomes": {
+        "success": "assignVariablesOrgListSDP"
+      }
+    },
+    "resetVariablesVPageSearchCriteria": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "parameters": {
+        "variables": [
+          "$page.variables.vPageSearchCriteria"
+        ]
+      },
+      "outcomes": {
+        "success": "callComponentOjDialogSearchingProgressClose"
+      }
+    },
+    "callComponentOjDialogSearchingProgressOpen": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('oj-dialog-searchingProgress') }}",
+        "method": "open"
+      },
+      "outcomes": {
+        "success": "callFunctionGetSearchQueryPrameter"
+      }
+    },
+    "callComponentOjDialogSearchingProgressClose": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('oj-dialog-searchingProgress') }}",
+        "method": "close"
+      }
+    }
+  },
+  "variables": {}
+}

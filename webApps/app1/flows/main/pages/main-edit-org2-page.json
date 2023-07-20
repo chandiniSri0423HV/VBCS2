@@ -1,0 +1,136 @@
+{
+  "title": "Edit Org",
+  "description": "Updates single Org record",
+  "variables": {
+    "depListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Dep",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallDepResponse",
+        "uriParameters": {}
+      }
+    },
+    "org": {
+      "type": "page:getOrgResponse"
+    },
+    "orgETag": {
+      "type": "string"
+    },
+    "orgId": {
+      "type": "string",
+      "required": true,
+      "input": "fromUrl"
+    },
+    "saveOrgChainInProgress": {
+      "type": "boolean",
+      "defaultValue": false
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getallDepResponse": {
+      "endpoint": "getall_Dep",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getOrgResponse": {
+      "endpoint": "get_Org",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "businessObjectsServiceErrorResponseType": {
+      "body": {
+        "status": "string",
+        "title": "string",
+        "o:errorDetails": [
+          {
+            "detail": "string",
+            "o:errorCode": "string"
+          }
+        ]
+      },
+      "status": "number"
+    },
+    "getallDepResponse": {
+      "items": [
+        {
+          "depName": "string",
+          "id": "number"
+        }
+      ]
+    },
+    "getOrgResponse": {
+      "department": "number",
+      "depRelation": "number",
+      "email": "string",
+      "firstName": "string",
+      "id": "number",
+      "lastName": "string",
+      "managerId": "number",
+      "phoneNumber": "number",
+      "salary": "number"
+    }
+  },
+  "eventListeners": {
+    "backButtonClicked": {
+      "chains": [
+        {
+          "chainId": "goBackChain"
+        }
+      ]
+    },
+    "saveButtonClicked": {
+      "chains": [
+        {
+          "chainId": "saveOrgChain"
+        }
+      ]
+    },
+    "toggleDrawer": {
+      "chains": [
+        {
+          "chainId": "application:toggleDrawerHandler"
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chainId": "loadOrgChain"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+    },
+    "modules": {
+      "ojValidationBase": {
+        "path": "ojs/ojvalidation-base"
+      }
+    }
+  }
+}

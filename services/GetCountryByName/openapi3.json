@@ -1,0 +1,644 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "GetCountryByNameV3.1",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://restcountries.com/v3.1",
+            "description": "V3.1",
+            "x-vb": {
+                "forceProxy": "cors"
+            }
+        }
+    ],
+    "paths": {
+        "/name/{name}": {
+            "parameters": [
+                {
+                    "name": "name",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "operationId": "getNameName",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetNameName"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getNameName/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetNameName": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "object",
+                            "properties": {
+                                "common": {
+                                    "type": "string"
+                                },
+                                "official": {
+                                    "type": "string"
+                                },
+                                "nativeName": {
+                                    "type": "object",
+                                    "properties": {
+                                        "eng": {
+                                            "type": "object",
+                                            "properties": {
+                                                "official": {
+                                                    "type": "string"
+                                                },
+                                                "common": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "hin": {
+                                            "type": "object",
+                                            "properties": {
+                                                "official": {
+                                                    "type": "string"
+                                                },
+                                                "common": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "tam": {
+                                            "type": "object",
+                                            "properties": {
+                                                "official": {
+                                                    "type": "string"
+                                                },
+                                                "common": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "tld": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "cca2": {
+                            "type": "string"
+                        },
+                        "ccn3": {
+                            "type": "string"
+                        },
+                        "cca3": {
+                            "type": "string"
+                        },
+                        "independent": {
+                            "type": "boolean"
+                        },
+                        "status": {
+                            "type": "string"
+                        },
+                        "unMember": {
+                            "type": "boolean"
+                        },
+                        "currencies": {
+                            "type": "object",
+                            "properties": {
+                                "USD": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "symbol": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "INR": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "symbol": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "idd": {
+                            "type": "object",
+                            "properties": {
+                                "root": {
+                                    "type": "string"
+                                },
+                                "suffixes": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "capital": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "altSpellings": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "region": {
+                            "type": "string"
+                        },
+                        "subregion": {
+                            "type": "string"
+                        },
+                        "languages": {
+                            "type": "object",
+                            "properties": {
+                                "eng": {
+                                    "type": "string"
+                                },
+                                "hin": {
+                                    "type": "string"
+                                },
+                                "tam": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "translations": {
+                            "type": "object",
+                            "properties": {
+                                "ara": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "bre": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "ces": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "cym": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "deu": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "est": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "fin": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "fra": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "hrv": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "hun": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "ita": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "jpn": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "kor": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "nld": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "per": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "pol": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "por": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "rus": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "slk": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "spa": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "srp": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "swe": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "tur": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "urd": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "zho": {
+                                    "type": "object",
+                                    "properties": {
+                                        "official": {
+                                            "type": "string"
+                                        },
+                                        "common": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "latlng": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "landlocked": {
+                            "type": "boolean"
+                        },
+                        "area": {
+                            "type": "integer"
+                        },
+                        "demonyms": {
+                            "type": "object",
+                            "properties": {
+                                "eng": {
+                                    "type": "object",
+                                    "properties": {
+                                        "f": {
+                                            "type": "string"
+                                        },
+                                        "m": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "fra": {
+                                    "type": "object",
+                                    "properties": {
+                                        "f": {
+                                            "type": "string"
+                                        },
+                                        "m": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "flag": {
+                            "type": "string"
+                        },
+                        "maps": {
+                            "type": "object",
+                            "properties": {
+                                "googleMaps": {
+                                    "type": "string"
+                                },
+                                "openStreetMaps": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "population": {
+                            "type": "integer"
+                        },
+                        "car": {
+                            "type": "object",
+                            "properties": {
+                                "signs": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "side": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "timezones": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "continents": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "flags": {
+                            "type": "object",
+                            "properties": {
+                                "png": {
+                                    "type": "string"
+                                },
+                                "svg": {
+                                    "type": "string"
+                                },
+                                "alt": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "coatOfArms": {
+                            "type": "object",
+                            "properties": {
+                                "png": {
+                                    "type": "string"
+                                },
+                                "svg": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "startOfWeek": {
+                            "type": "string"
+                        },
+                        "capitalInfo": {
+                            "type": "object",
+                            "properties": {
+                                "latlng": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        },
+                        "cioc": {
+                            "type": "string"
+                        },
+                        "borders": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "gini": {
+                            "type": "object",
+                            "properties": {
+                                "2011": {
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "fifa": {
+                            "type": "string"
+                        },
+                        "postalCode": {
+                            "type": "object",
+                            "properties": {
+                                "format": {
+                                    "type": "string"
+                                },
+                                "regex": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
